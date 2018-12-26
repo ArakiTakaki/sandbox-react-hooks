@@ -4,10 +4,8 @@ import { Provider } from './store/';
 import Sample from './component/Sample';
 
 ReactDOM.render(
-  <div>
-    <Provider>
-      <Sample />
-    </Provider>
-  </div>,
+  <Provider>
+    <Sample />
+  </Provider>,
   document.getElementById('app')
 );

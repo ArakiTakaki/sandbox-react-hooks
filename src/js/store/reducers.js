@@ -1,3 +1,16 @@
+const middlewareList = [];
+export const registerMiddleware = ({ before, after }) => {
+  const middleware = { before, after };
+  middlewareList.push(middleware);
+};
+
+const reducerMiddleware = (state, action) => {
+  console.log(middlewareList);
+  for ( let middleware of middlewareList ) middleware.before(state, action);
+  const nextState = reducer(state, action);
+  for ( let middleware of middlewareList ) middleware.after(nextState, action);
+  return nextState
+};
 const reducer = (state, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -15,4 +28,4 @@ const reducer = (state, action) => {
   }
 };
 
-export default reducer;
+export default reducerMiddleware;
