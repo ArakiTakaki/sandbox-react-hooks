@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useContext } from 'react';
 import { Store } from '~/store/';
 import * as Actions from '~/store/actions';
@@ -7,12 +7,12 @@ export const SAMPLE_ACTION = 'SAMPLE_ACTION';
 
 const Sample = () => {
   const { state, dispatch } = useContext(Store);
-  const increment = () => {
+  const increment = useCallback(() => {
     dispatch(Actions.increment());
-  };
-  const decrement = () => {
+  });
+  const decrement = useCallback(() => {
     dispatch(Actions.decrement());
-  };
+  });
 
   return (
     <>

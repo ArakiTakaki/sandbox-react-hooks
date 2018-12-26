@@ -5,7 +5,6 @@ export const registerMiddleware = ({ before, after }) => {
 };
 
 const reducerMiddleware = (state, action) => {
-  console.log(middlewareList);
   for ( let middleware of middlewareList ) middleware.before(state, action);
   const nextState = reducer(state, action);
   for ( let middleware of middlewareList ) middleware.after(nextState, action);
