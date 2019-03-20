@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Store } from '~/store/';
 
 const Connect = Component => {
-  return (props) => {
+  return props => {
     const { state, dispatch } = useContext(Store);
     return <Component store={state} dispatch={dispatch} {...props} />
   };
