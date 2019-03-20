@@ -1,28 +1,17 @@
-import React, { useEffect, useCallback } from 'react';
-import { useContext } from 'react';
-import { Store } from '~/store/';
-import * as Actions from '~/store/actions';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Connect from '../store/connect';
 
-export const SAMPLE_ACTION = 'SAMPLE_ACTION';
+class Sample extends React.Component {
+  render() {
+    console.log(this.props);
+    return <h1>test</h1>;
+  }
+}
 
-const Sample = () => {
-  const { state, dispatch } = useContext(Store);
-  const increment = useCallback(() => {
-    dispatch(Actions.increment());
-  });
-  const decrement = useCallback(() => {
-    dispatch(Actions.decrement());
-  });
-
-  return (
-    <>
-      count : {state.count}
-      <div>
-        <button onClick={increment}>increment</button>
-        <button onClick={decrement}>decrement</button>
-      </div>
-    </>
-  );
+Sample.propTypes = {
+  children: PropTypes.any
 };
 
-export default Sample;
+export default Connect(Sample);
+
