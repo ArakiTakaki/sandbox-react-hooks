@@ -25,7 +25,7 @@ const logger = {
     this.beforeState = state;
   },
   after(state, action) {
-    console.group(`%cACTION TYPE ${action.type}`, actionTypeCSS);
+    console.groupCollapsed(`%cACTION TYPE : ${action.type}`, actionTypeCSS);
     console.log('%cBefore', prevCSS);
     console.log(this.beforeState);
     console.log('%cPayload', payloadCSS);

@@ -4,8 +4,10 @@ export const registerMiddleware = ({ before, after }) => {
   middlewareList.push(middleware);
 };
 
-const reducerMiddleware = (state, action) => {
-  for ( let middleware of middlewareList ) middleware.before(state, action);
+const execReducer = (state, action) => {
+  for ( let middleware of middlewareList ) {
+    middleware.before(state, action);
+  }
   const nextState = reducer(state, action);
   for ( let middleware of middlewareList ) middleware.after(nextState, action);
   return nextState
@@ -27,4 +29,4 @@ const reducer = (state, action) => {
   }
 };
 
-export default reducerMiddleware;
+export default execReducer;
