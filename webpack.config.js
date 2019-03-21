@@ -6,7 +6,7 @@ console.log(path.resolve(__dirname, './src/pug/index.pug'));
 isSourceMap = true;
 module.exports = {
   mode: 'development',
-  entry: ['./src/js/index.jsx'],
+  entry: ['./test/js/index.jsx'],
   module: {
     rules: [
       { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
