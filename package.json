@@ -2,13 +2,14 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js"
   },
-  "dependencies": {
-    "moment": "^2.23.0",
+  "dependencies": {},
+  "peerDependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
-  "peerDependencies": {},
   "devDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-decorators": "^7.2.3",
     "@babel/plugin-transform-runtime": "^7.2.0",

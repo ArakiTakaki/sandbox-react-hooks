@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Connect from '../store/connect';
-import * as Actions from '~/store/actions'
 
-@Connect
+import * as Actions from '~/store/actions'
+import store from '../store';
+import { Connect } from '../../../lib';
+
+@Connect(store)
 class Sample extends React.Component {
   constructor (props) {
     super(props);
@@ -15,9 +17,7 @@ class Sample extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { store, dispatch } = this.props;
-    console.log(this.props.sample);
     return (
       <div>
         <div>{store.user.name}</div>
