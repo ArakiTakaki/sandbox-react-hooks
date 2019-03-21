@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Sample from "./component/Sample";
-import { Provider } from "./store";
+import Store from "./store/index";
+import { Provider } from "../../lib/index";
 
 ReactDOM.render(
   <div>
-    <Provider>
+    <Provider store={Store}>
       <Sample />
       <Sample />
     </Provider>
