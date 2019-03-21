@@ -2,11 +2,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const path = require('path');
-console.log(path.resolve(__dirname, './src/pug/index.pug'));
+console.log(path.resolve(__dirname, './sample/pug/index.pug'));
 isSourceMap = true;
 module.exports = {
   mode: 'development',
-  entry: ['./test/js/index.jsx'],
+  entry: ['./sample/js/index.jsx'],
   module: {
     rules: [
       { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
@@ -35,7 +35,7 @@ module.exports = {
                 new HtmlWebpackPlugin({
                   inject: true,
                   hash: true,
-                  template: path.resolve(__dirname, './test/pug/index.pug')
+                  template: path.resolve(__dirname, './sample/pug/index.pug')
                 })
               ]
             }
@@ -54,15 +54,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.js', '.jsx', '.json', '.sass'],
     alias: {
-      '~': path.resolve(__dirname, './test/js/'),
-      sass: path.resolve(__dirname, './test/sass')
+      '~': path.resolve(__dirname, './sample/js/'),
+      sass: path.resolve(__dirname, './sample/sass')
     }
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       hash: true,
-      template: path.resolve(__dirname, './test/pug/index.pug')
+      template: path.resolve(__dirname, './sample/pug/index.pug')
     })
   ],
   output: {
