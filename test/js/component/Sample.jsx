@@ -17,6 +17,7 @@ class Sample extends React.Component {
   render() {
     console.log(this.props);
     const { store, dispatch } = this.props;
+    console.log(this.props.sample);
     return (
       <div>
         <div>{store.user.name}</div>
