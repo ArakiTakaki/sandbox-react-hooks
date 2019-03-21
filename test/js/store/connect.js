@@ -1,10 +1,9 @@
 
-import React, { useReducer } from 'react';
-import reducers, {registerMiddleware} from  './reducers';
-import initialState from './initialState';
+import React, { useContext } from 'react';
+import {Store} from './index';
 
 const Connect = Component =>  props => {
-  const [state, dispatch] = useReducer(reducers, initialState);
+  const {state, dispatch} = useContext(Store);
   return (
     <Component store={state} dispatch={dispatch} {...props} />
   );
