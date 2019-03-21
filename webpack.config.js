@@ -35,7 +35,7 @@ module.exports = {
                 new HtmlWebpackPlugin({
                   inject: true,
                   hash: true,
-                  template: path.resolve(__dirname, './src/pug/index.pug')
+                  template: path.resolve(__dirname, './test/pug/index.pug')
                 })
               ]
             }
@@ -54,15 +54,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.js', '.jsx', '.json', '.sass'],
     alias: {
-      '~': path.resolve(__dirname, './src/js/'),
-      sass: path.resolve(__dirname, './src/sass')
+      '~': path.resolve(__dirname, './test/js/'),
+      sass: path.resolve(__dirname, './test/sass')
     }
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       hash: true,
-      template: path.resolve(__dirname, './src/pug/index.pug')
+      template: path.resolve(__dirname, './test/pug/index.pug')
     })
   ],
   output: {
